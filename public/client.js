@@ -2,6 +2,7 @@ var mix = document.getElementById('mix-color')
 var colorOne = document.getElementsByName('color-one')
 var colorTwo = document.getElementsByName('color-two')
 var newColor = document.getElementById('mixed')
+var colorVal = document.getElementById('color-val')
 var finalColor = ''
 var firstColor = []
 var secondColor = []
@@ -26,9 +27,10 @@ for (var i=0; i < colorTwo.length; i++) {
     })
     console.log(secondColor)
     console.log(firstColor[0] + secondColor[0])
-    mixedColor = [(firstColor[0] + secondColor[0])/2, (firstColor[1] + secondColor[1])/2, (firstColor[2] + secondColor[2])/2, 1]
+    mixedColor = [Math.round((firstColor[0] + secondColor[0])/2), Math.round((firstColor[1] + secondColor[1])/2), Math.round((firstColor[2] + secondColor[2])/2), 1]
     finalColor = 'rgba(' + mixedColor.join(',') + ')'
     newColor.style.backgroundColor = finalColor
+    colorVal.innerHTML = finalColor
     console.log(finalColor)
   })
 }
