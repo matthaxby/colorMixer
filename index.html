@@ -7,17 +7,25 @@
 </head>
 <body>
   {{#colors}}
-  <main>
-    <section>
-      <div style="background-color: rgba({{red}}, {{green}}, {{blue}}, 1)"></div>
-    </section>
-  </main>
+      <label for="{{_id}}"></label>
+      <div id="{{_id}}" data-colors="{{red}}, {{green}}, {{blue}}" style="background-color: rgba({{red}}, {{green}}, {{blue}}, 1)">
+        <input id="{{_id}}" type="radio" name="color-one" data-colors="{{red}}, {{green}}, {{blue}}" value="{{red}}, {{green}}, {{blue}}">
+      </div>
   {{/colors}}
+  <br>
+  {{#colors}}
+    <label for="{{_id}}"></label>
+    <div id="{{_id}}" data-colors="{{red}}, {{green}}, {{blue}}" style="background-color: rgba({{red}}, {{green}}, {{blue}}, 1)">
+      <input id="{{_id}}" type="radio" name="color-two" data-colors="{{red}}, {{green}}, {{blue}}" value="{{red}}, {{green}}, {{blue}}">
+    </div>
+  {{/colors}}
+  <input id="mix-color" type="submit" value="MIX EM">
   <form action="/colors" method="post">
     <input type="text" id="red" name="red" placeholder="red">
     <input type="text" id="green" name="green" placeholder="green">
     <input type="text" id="blue" name="blue" placeholder="blue">
     <input type="submit" value="Add Color">
   </form>
+  <script src="public/client.js"></script>
 </body>
 </html>

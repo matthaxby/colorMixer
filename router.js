@@ -9,7 +9,6 @@ var routes = require('routes')(),
 
 
 routes.addRoute('/colors', (req, res, url) => {
-  console.log(url.route)
   if (req.method === 'GET') {
     res.setHeader('Content-Type', 'text/html')
     colors.find({}, function (err, docs) {
@@ -33,6 +32,18 @@ routes.addRoute('/colors', (req, res, url) => {
     })
   }
 })
+
+// routes.addRoute('/mixer', (req, res, url) => {
+//   if (req.method === 'post') {
+//     var data = ''
+//     req.on('data', function(chunk) {
+//       data += chunk
+//     })
+//     req.on('end', function() {
+//
+//     })
+//   }
+// })
 
 routes.addRoute('/public/*', (req, res, url) => {
   res.setHeader('Content-Type', mime.lookup(req.url))
