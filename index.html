@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
+  {{#colors}}
   <main>
     <section>
-      <div class='color1'>Mixed color 1</div>
-      <div class='color2'>Mixed color 2</div>
-      <div class='color3'>New color</div>
+      <div style="background-color: rgba({{red}}, {{green}}, {{blue}}, 1)"></div>
     </section>
   </main>
-
+  {{/colors}}
+  <form action="/colors" method="post">
+    <input type="text" id="red" name="red" placeholder="red">
+    <input type="text" id="green" name="green" placeholder="green">
+    <input type="text" id="blue" name="blue" placeholder="blue">
+    <input type="submit" value="Add Color">
+  </form>
 </body>
 </html>
