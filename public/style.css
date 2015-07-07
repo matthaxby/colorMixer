@@ -1,5 +1,7 @@
 
 div {
+  margin-top: 20px;
+  margin: 5px;
   height: 4em;
   width: 4em;
   display: inline-block;
@@ -7,7 +9,15 @@ div {
   border-radius: 50%;
 }
 
-div .mixed {
+.new {
+  /* position: absolute; */
+  margin-right: 50px;
+  margin-top: -150px;
+  display: block;
+  float: right;
   height: 8em;
   width: 8em;
+}
+h4 {
+  padding-top: 135px;
 }
