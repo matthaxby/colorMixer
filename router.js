@@ -33,17 +33,15 @@ routes.addRoute('/colors', (req, res, url) => {
   }
 })
 
-// routes.addRoute('/mixer', (req, res, url) => {
-//   if (req.method === 'post') {
-//     var data = ''
-//     req.on('data', function(chunk) {
-//       data += chunk
-//     })
-//     req.on('end', function() {
-//
-//     })
-//   }
-// })
+routes.addRoute('/colors/:id/delete', (req, res, url) => {
+  if(req.method === 'POST') {
+    colors.remove({_id: url.params.id}, function(err, doc) {
+      if (err) console.log(err)
+      res.writeHead(302, {'Location': '/colors'})
+      res.end()
+    })
+  }
+})
 
 routes.addRoute('/public/*', (req, res, url) => {
   res.setHeader('Content-Type', mime.lookup(req.url))

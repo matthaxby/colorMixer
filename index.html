@@ -10,6 +10,9 @@
       <label for="{{_id}}"></label>
       <div id="{{_id}}" data-colors="{{red}}, {{green}}, {{blue}}" style="background-color: rgba({{red}}, {{green}}, {{blue}}, 1)">
         <input id="{{_id}}" type="radio" name="color-one" data-colors="{{red}}, {{green}}, {{blue}}" value="{{red}}, {{green}}, {{blue}}">
+        <form action="/colors/{{_id}}/delete" method="post">
+          <input type="submit" value="remove">
+        </form>
       </div>
   {{/colors}}
   <br>
@@ -19,7 +22,6 @@
       <input id="{{_id}}" type="radio" name="color-two" data-colors="{{red}}, {{green}}, {{blue}}" value="{{red}}, {{green}}, {{blue}}">
     </div>
   {{/colors}}
-  <input id="mix-color" type="submit" value="MIX EM">
   <form action="/colors" method="post">
     <input type="text" id="red" name="red" placeholder="red">
     <input type="text" id="green" name="green" placeholder="green">
